@@ -14,6 +14,3 @@ class AWeightGameMode : public AGameModeBase
 public:
 	AWeightGameMode();
 };
-
-
-
