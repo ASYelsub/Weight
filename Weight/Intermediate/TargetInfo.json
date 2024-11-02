@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "Weight",
+			"Path": "..\\Source\\Weight.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "WeightEditor",
+			"Path": "..\\Source\\WeightEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
