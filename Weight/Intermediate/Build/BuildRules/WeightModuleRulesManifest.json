@@ -1,8 +1,8 @@
 {
 	"SourceFiles": [
-		"C:\\Abby\\Game Development\\Weight\\Weight\\Source\\Weight\\Weight.Build.cs",
-		"C:\\Abby\\Game Development\\Weight\\Weight\\Source\\Weight.Target.cs",
-		"C:\\Abby\\Game Development\\Weight\\Weight\\Source\\WeightEditor.Target.cs"
+		"C:\\Projects\\GitProjects\\Weight\\Weight\\Source\\Weight\\Weight.Build.cs",
+		"C:\\Projects\\GitProjects\\Weight\\Weight\\Source\\Weight.Target.cs",
+		"C:\\Projects\\GitProjects\\Weight\\Weight\\Source\\WeightEditor.Target.cs"
 	],
 	"EngineVersion": "5.4.4"
 }

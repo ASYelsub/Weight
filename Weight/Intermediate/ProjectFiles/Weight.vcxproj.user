@@ -31,9 +31,8 @@
     <DebuggerFlavor>WindowsRemoteDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Development_Editor|x64'">
-    <LocalDebuggerCommandArguments>"C:\Abby\Game Development\Weight\Weight\Weight.uproject" -skipcompile</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>"$(SolutionDir)Weight.uproject" -skipcompile</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
-    <RemoteDebuggerCommandArguments>"C:\Abby\Game Development\Weight\Weight\Weight.uproject" -skipcompile</RemoteDebuggerCommandArguments>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win64_arm64_Development_Editor|x64'">
     <RemoteDebuggerCommandArguments>"$(SolutionDir)Weight.uproject" -skipcompile</RemoteDebuggerCommandArguments>

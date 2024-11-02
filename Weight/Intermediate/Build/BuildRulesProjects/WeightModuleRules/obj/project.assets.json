@@ -8562,19 +8562,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Abigail\\.nuget\\packages\\": {}
+    "C:\\Users\\Michael\\.nuget\\packages\\": {},
+    "C:\\Users\\Michael\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Abby\\Game Development\\Weight\\Weight\\Intermediate\\Build\\BuildRulesProjects\\WeightModuleRules\\WeightModuleRules.csproj",
+      "projectUniqueName": "C:\\Projects\\GitProjects\\Weight\\Weight\\Intermediate\\Build\\BuildRulesProjects\\WeightModuleRules\\WeightModuleRules.csproj",
       "projectName": "WeightModuleRules",
-      "projectPath": "C:\\Abby\\Game Development\\Weight\\Weight\\Intermediate\\Build\\BuildRulesProjects\\WeightModuleRules\\WeightModuleRules.csproj",
-      "packagesPath": "C:\\Users\\Abigail\\.nuget\\packages\\",
-      "outputPath": "C:\\Abby\\Game Development\\Weight\\Weight\\Intermediate\\Build\\BuildRulesProjects\\WeightModuleRules\\obj\\",
+      "projectPath": "C:\\Projects\\GitProjects\\Weight\\Weight\\Intermediate\\Build\\BuildRulesProjects\\WeightModuleRules\\WeightModuleRules.csproj",
+      "packagesPath": "C:\\Users\\Michael\\.nuget\\packages\\",
+      "outputPath": "C:\\Projects\\GitProjects\\Weight\\Weight\\Intermediate\\Build\\BuildRulesProjects\\WeightModuleRules\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Users\\Michael\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Abigail\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Michael\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Michael\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8636,7 +8641,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,6 +1,6 @@
 /I "."
-/I "C:\Abby\Game Development\Weight\Weight\Intermediate\Build\Win64\UnrealEditor\Inc\Weight\UHT"
-/I "C:\Abby\Game Development\Weight\Weight\Source"
+/I "C:\Projects\GitProjects\Weight\Weight\Intermediate\Build\Win64\UnrealEditor\Inc\Weight\UHT"
+/I "C:\Projects\GitProjects\Weight\Weight\Source"
 /I "Runtime\Core\Public"
 /I "Runtime\Core\Internal"
 /I "Runtime\TraceLog\Public"

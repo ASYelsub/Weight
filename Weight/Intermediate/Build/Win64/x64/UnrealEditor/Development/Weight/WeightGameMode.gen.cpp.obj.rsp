@@ -1,11 +1,11 @@
-"C:\Abby\Game Development\Weight\Weight\Intermediate\Build\Win64\UnrealEditor\Inc\Weight\UHT\WeightGameMode.gen.cpp"
-/FI"C:\Abby\Game Development\Weight\Weight\Intermediate\Build\Win64\x64\WeightEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h"
-/FI"C:\Abby\Game Development\Weight\Weight\Intermediate\Build\Win64\x64\UnrealEditor\Development\Weight\Definitions.Weight.h"
-/Yu"C:\Abby\Game Development\Weight\Weight\Intermediate\Build\Win64\x64\WeightEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h"
-/Fp"C:\Abby\Game Development\Weight\Weight\Intermediate\Build\Win64\x64\WeightEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.pch"
-/Fo"C:\Abby\Game Development\Weight\Weight\Intermediate\Build\Win64\x64\UnrealEditor\Development\Weight\WeightGameMode.gen.cpp.obj"
-/sourceDependencies "C:\Abby\Game Development\Weight\Weight\Intermediate\Build\Win64\x64\UnrealEditor\Development\Weight\WeightGameMode.gen.cpp.dep.json"
-@"C:\Abby\Game Development\Weight\Weight\Intermediate\Build\Win64\x64\UnrealEditor\Development\Weight\Weight.Shared.rsp"
+"C:\Projects\GitProjects\Weight\Weight\Intermediate\Build\Win64\UnrealEditor\Inc\Weight\UHT\WeightGameMode.gen.cpp"
+/FI"C:\Projects\GitProjects\Weight\Weight\Intermediate\Build\Win64\x64\WeightEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h"
+/FI"C:\Projects\GitProjects\Weight\Weight\Intermediate\Build\Win64\x64\UnrealEditor\Development\Weight\Definitions.Weight.h"
+/Yu"C:\Projects\GitProjects\Weight\Weight\Intermediate\Build\Win64\x64\WeightEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h"
+/Fp"C:\Projects\GitProjects\Weight\Weight\Intermediate\Build\Win64\x64\WeightEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.pch"
+/Fo"C:\Projects\GitProjects\Weight\Weight\Intermediate\Build\Win64\x64\UnrealEditor\Development\Weight\WeightGameMode.gen.cpp.obj"
+/sourceDependencies "C:\Projects\GitProjects\Weight\Weight\Intermediate\Build\Win64\x64\UnrealEditor\Development\Weight\WeightGameMode.gen.cpp.dep.json"
+@"C:\Projects\GitProjects\Weight\Weight\Intermediate\Build\Win64\x64\UnrealEditor\Development\Weight\Weight.Shared.rsp"
 /Zc:inline
 /nologo
 /Oi

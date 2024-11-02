@@ -12,4 +12,6 @@ AWeightGameMode::AWeightGameMode()
 	{
 		DefaultPawnClass = PlayerPawnBPClass.Class;
 	}
+
+	UE_LOG(LogTemp, Warning, TEXT("Hello World! Welcome to 'Weight'."));
 }

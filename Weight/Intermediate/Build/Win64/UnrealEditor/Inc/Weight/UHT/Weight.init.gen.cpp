@@ -17,7 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeWeight_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0x3F48AD27,
+				0x1090C409,
 				0xE73E4CD6,
 				METADATA_PARAMS(0, nullptr)
 			};
@@ -25,5 +25,5 @@ void EmptyLinkFunctionForGeneratedCodeWeight_init() {}
 		}
 		return Z_Registration_Info_UPackage__Script_Weight.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_Weight(Z_Construct_UPackage__Script_Weight, TEXT("/Script/Weight"), Z_Registration_Info_UPackage__Script_Weight, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x3F48AD27, 0xE73E4CD6));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_Weight(Z_Construct_UPackage__Script_Weight, TEXT("/Script/Weight"), Z_Registration_Info_UPackage__Script_Weight, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x1090C409, 0xE73E4CD6));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

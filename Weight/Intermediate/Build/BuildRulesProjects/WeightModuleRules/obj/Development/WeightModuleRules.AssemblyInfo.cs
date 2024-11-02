@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WeightModuleRules")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Development")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e1e2df8686060cb4e3b9a4a4ba331f1542d78c18")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5fcea1d144c0693c7d068dd209920759f9f1b2f0")]
 [assembly: System.Reflection.AssemblyProductAttribute("WeightModuleRules")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WeightModuleRules")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

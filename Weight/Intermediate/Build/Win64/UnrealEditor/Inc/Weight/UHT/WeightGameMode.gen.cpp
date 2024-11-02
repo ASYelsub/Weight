@@ -78,14 +78,14 @@ AWeightGameMode::~AWeightGameMode() {}
 // End Class AWeightGameMode
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Abby_Game_Development_Weight_Weight_Source_Weight_WeightGameMode_h_Statics
+struct Z_CompiledInDeferFile_FID_Projects_GitProjects_Weight_Weight_Source_Weight_WeightGameMode_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_AWeightGameMode, AWeightGameMode::StaticClass, TEXT("AWeightGameMode"), &Z_Registration_Info_UClass_AWeightGameMode, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AWeightGameMode), 4267371245U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Abby_Game_Development_Weight_Weight_Source_Weight_WeightGameMode_h_1406108555(TEXT("/Script/Weight"),
-	Z_CompiledInDeferFile_FID_Abby_Game_Development_Weight_Weight_Source_Weight_WeightGameMode_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Abby_Game_Development_Weight_Weight_Source_Weight_WeightGameMode_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_GitProjects_Weight_Weight_Source_Weight_WeightGameMode_h_1406108555(TEXT("/Script/Weight"),
+	Z_CompiledInDeferFile_FID_Projects_GitProjects_Weight_Weight_Source_Weight_WeightGameMode_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_GitProjects_Weight_Weight_Source_Weight_WeightGameMode_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

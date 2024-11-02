@@ -1,17 +1,17 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "c:\\abby\\game development\\weight\\weight\\intermediate\\build\\win64\\unrealeditor\\inc\\weight\\uht\\weightgamemode.gen.cpp",
+        "Source": "c:\\projects\\gitprojects\\weight\\weight\\intermediate\\build\\win64\\unrealeditor\\inc\\weight\\uht\\weightgamemode.gen.cpp",
         "ProvidedModule": "",
-        "PCH": "c:\\abby\\game development\\weight\\weight\\intermediate\\build\\win64\\x64\\weighteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "PCH": "c:\\projects\\gitprojects\\weight\\weight\\intermediate\\build\\win64\\x64\\weighteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
         "Includes": [
-            "c:\\abby\\game development\\weight\\weight\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\weight\\definitions.weight.h",
-            "c:\\abby\\game development\\weight\\weight\\source\\weight\\weightgamemode.h",
+            "c:\\projects\\gitprojects\\weight\\weight\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\weight\\definitions.weight.h",
+            "c:\\projects\\gitprojects\\weight\\weight\\source\\weight\\weightgamemode.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\gameframework\\gamemodebase.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\engine\\serverstatreplicator.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\serverstatreplicator.generated.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gamemodebase.generated.h",
-            "c:\\abby\\game development\\weight\\weight\\intermediate\\build\\win64\\unrealeditor\\inc\\weight\\uht\\weightgamemode.generated.h"
+            "c:\\projects\\gitprojects\\weight\\weight\\intermediate\\build\\win64\\unrealeditor\\inc\\weight\\uht\\weightgamemode.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

@@ -1,11 +1,11 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "c:\\abby\\game development\\weight\\weight\\intermediate\\build\\win64\\x64\\weighteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.cpp",
+        "Source": "c:\\projects\\gitprojects\\weight\\weight\\intermediate\\build\\win64\\x64\\weighteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.cpp",
         "ProvidedModule": "",
         "Includes": [
-            "c:\\abby\\game development\\weight\\weight\\intermediate\\build\\win64\\x64\\weighteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h",
-            "c:\\abby\\game development\\weight\\weight\\intermediate\\build\\win64\\x64\\weighteditor\\development\\unrealed\\shareddefinitions.unrealed.project.valapi.cpp20.h",
+            "c:\\projects\\gitprojects\\weight\\weight\\intermediate\\build\\win64\\x64\\weighteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h",
+            "c:\\projects\\gitprojects\\weight\\weight\\intermediate\\build\\win64\\x64\\weighteditor\\development\\unrealed\\shareddefinitions.unrealed.project.valapi.cpp20.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\editor\\unrealed\\public\\unrealedsharedpch.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\engine\\public\\enginesharedpch.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\slate\\public\\slatesharedpch.h",
