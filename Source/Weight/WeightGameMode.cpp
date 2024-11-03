@@ -5,13 +5,12 @@
 #include "UObject/ConstructorHelpers.h"
 
 AWeightGameMode::AWeightGameMode()
+	: Super()
 {
 	// set default pawn class to our Blueprinted character
-	static ConstructorHelpers::FClassFinder<APawn> PlayerPawnBPClass(TEXT("/Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter"));
-	if (PlayerPawnBPClass.Class != NULL)
-	{
-		DefaultPawnClass = PlayerPawnBPClass.Class;
-	}
+	static ConstructorHelpers::FClassFinder<APawn> PlayerPawnClassFinder(TEXT("/Game/FirstPerson/Blueprints/BP_FirstPersonCharacter"));
+	DefaultPawnClass = PlayerPawnClassFinder.Class;
 
-	UE_LOG(LogTemp, Warning, TEXT("Hello World! Welcome to 'Weight'. Test, test."));
+	UE_LOG(LogTemp, Warning, TEXT("Hello World! Welcome to Weight!"));
+
 }
