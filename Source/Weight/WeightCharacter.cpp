@@ -1,7 +1,8 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "WeightCharacter.h"
-#include "WeightProjectile.h"
+
+#include "APeephole.h"
 #include "Animation/AnimInstance.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
@@ -20,6 +21,8 @@ AWeightCharacter::AWeightCharacter()
 {
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(55.f, 96.0f);
+	GetCapsuleComponent()->OnComponentBeginOverlap.AddDynamic(this, &AWeightCharacter::OnCapsuleComponentBeginOverlapEvent);
+	GetCapsuleComponent()->OnComponentEndOverlap.AddDynamic(this, &AWeightCharacter::OnCapsuleComponentEndOverlapEvent);
 		
 	// Create a CameraComponent	
 	FirstPersonCameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("FirstPersonCamera"));
@@ -42,6 +45,27 @@ void AWeightCharacter::BeginPlay()
 {
 	// Call the base class  
 	Super::BeginPlay();
+
+	// Bind overlap events.
+	
+}
+
+void AWeightCharacter::OnCapsuleComponentBeginOverlapEvent(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
+{
+	if (OtherActor->IsA<APeephole>() && Controller != nullptr)
+	{
+		ClosestPossessablePawn = Cast<APeephole, AActor>(OtherActor);
+		UE_LOG(LogTemp, Warning, TEXT("On Capsule Begin Overlap! We overlapped with Actor: %s"), *OtherActor->GetName())
+	}
+}
+
+void AWeightCharacter::OnCapsuleComponentEndOverlapEvent(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	if (OtherActor->IsA<APeephole>() && ClosestPossessablePawn != nullptr)
+	{
+		ClosestPossessablePawn = nullptr;
+		UE_LOG(LogTemp, Warning, TEXT("On Capsule End Overlap! We left Actor: %s"), *OtherActor->GetName())
+	}
 }
 
 //////////////////////////////////////////////////////////////////////////// Input
@@ -60,13 +84,15 @@ void AWeightCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 
 		// Looking
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AWeightCharacter::Look);
+
+		// Interacting
+		EnhancedInputComponent->BindAction(InteractAction, ETriggerEvent::Triggered, this, &AWeightCharacter::Interact);
 	}
 	else
 	{
 		UE_LOG(LogTemplateCharacter, Error, TEXT("'%s' Failed to find an Enhanced Input Component! This template is built to use the Enhanced Input system. If you intend to use the legacy system, then you will need to update this C++ file."), *GetNameSafe(this));
 	}
 }
-
 
 void AWeightCharacter::Move(const FInputActionValue& Value)
 {
@@ -91,5 +117,16 @@ void AWeightCharacter::Look(const FInputActionValue& Value)
 		// add yaw and pitch input to controller
 		AddControllerYawInput(LookAxisVector.X);
 		AddControllerPitchInput(LookAxisVector.Y);
+	}
+}
+
+void AWeightCharacter::Interact(const FInputActionValue& Value)
+{
+	bool Pressed = Value.Get<bool>();
+
+	if (Controller != nullptr && Pressed)
+	{
+		ClosestPossessablePawn->PawnCurrentlyPeeking = this;
+		GetController()->Possess(ClosestPossessablePawn);
 	}
 }

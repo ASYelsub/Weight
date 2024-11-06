@@ -3,6 +3,7 @@
 
 # Jetbrains Rider user specific files
 *.user
+.idea/
 
 # Compiled Object files
 *.slo
