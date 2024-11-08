@@ -10,7 +10,10 @@
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "InputActionValue.h"
+#include "WeightPlayerController.h"
 #include "Engine/LocalPlayer.h"
+#include "GameFramework/CharacterMovementComponent.h"
+#include "GameFramework/PawnMovementComponent.h"
 
 DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
@@ -21,9 +24,7 @@ AWeightCharacter::AWeightCharacter()
 {
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(55.f, 96.0f);
-	GetCapsuleComponent()->OnComponentBeginOverlap.AddDynamic(this, &AWeightCharacter::OnCapsuleComponentBeginOverlapEvent);
-	GetCapsuleComponent()->OnComponentEndOverlap.AddDynamic(this, &AWeightCharacter::OnCapsuleComponentEndOverlapEvent);
-		
+	
 	// Create a CameraComponent	
 	FirstPersonCameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("FirstPersonCamera"));
 	FirstPersonCameraComponent->SetupAttachment(GetCapsuleComponent());
@@ -45,27 +46,6 @@ void AWeightCharacter::BeginPlay()
 {
 	// Call the base class  
 	Super::BeginPlay();
-
-	// Bind overlap events.
-	
-}
-
-void AWeightCharacter::OnCapsuleComponentBeginOverlapEvent(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
-{
-	if (OtherActor->IsA<APeephole>() && Controller != nullptr)
-	{
-		ClosestPossessablePawn = Cast<APeephole, AActor>(OtherActor);
-		UE_LOG(LogTemp, Warning, TEXT("On Capsule Begin Overlap! We overlapped with Actor: %s"), *OtherActor->GetName())
-	}
-}
-
-void AWeightCharacter::OnCapsuleComponentEndOverlapEvent(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
-{
-	if (OtherActor->IsA<APeephole>() && ClosestPossessablePawn != nullptr)
-	{
-		ClosestPossessablePawn = nullptr;
-		UE_LOG(LogTemp, Warning, TEXT("On Capsule End Overlap! We left Actor: %s"), *OtherActor->GetName())
-	}
 }
 
 //////////////////////////////////////////////////////////////////////////// Input
@@ -94,12 +74,30 @@ void AWeightCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 	}
 }
 
+void AWeightCharacter::NotifyActorBeginOverlap(AActor* OtherActor)
+{
+	AWeightPlayerController* PC = Cast<AWeightPlayerController>(Controller);
+	APeephole* Peephole = Cast<APeephole>(OtherActor);
+	if (PC)
+	{
+		PC->BeginOverlapAPeephole(Peephole);
+	}
+}
+
+void AWeightCharacter::NotifyActorEndOverlap(AActor* OtherActor)
+{
+	AWeightPlayerController* PC = Cast<AWeightPlayerController>(Controller);
+	APeephole* Peephole = Cast<APeephole>(OtherActor);
+	if (PC && Peephole)
+	{
+		PC->EndOverlapAPeephole(Peephole);
+	}
+}
+
 void AWeightCharacter::Move(const FInputActionValue& Value)
 {
-	// input is a Vector2D
 	FVector2D MovementVector = Value.Get<FVector2D>();
-
-	if (Controller != nullptr)
+	if (Controller)
 	{
 		// add movement 
 		AddMovementInput(GetActorForwardVector(), MovementVector.Y);
@@ -109,10 +107,8 @@ void AWeightCharacter::Move(const FInputActionValue& Value)
 
 void AWeightCharacter::Look(const FInputActionValue& Value)
 {
-	// input is a Vector2D
-	FVector2D LookAxisVector = Value.Get<FVector2D>();
-
-	if (Controller != nullptr)
+	const FVector2D LookAxisVector = Value.Get<FVector2D>();
+	if (Controller)
 	{
 		// add yaw and pitch input to controller
 		AddControllerYawInput(LookAxisVector.X);
@@ -122,11 +118,9 @@ void AWeightCharacter::Look(const FInputActionValue& Value)
 
 void AWeightCharacter::Interact(const FInputActionValue& Value)
 {
-	bool Pressed = Value.Get<bool>();
-
-	if (Controller != nullptr && Pressed)
+	const bool Pressed = Value.Get<bool>();
+	if (AWeightPlayerController* PC = Cast<AWeightPlayerController>(Controller); PC && Pressed)
 	{
-		ClosestPossessablePawn->PawnCurrentlyPeeking = this;
-		GetController()->Possess(ClosestPossessablePawn);
+		PC -> PossessRequest(this);
 	}
 }

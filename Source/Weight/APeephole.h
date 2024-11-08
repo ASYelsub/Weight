@@ -6,6 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "APeephole.generated.h"
 
+class USpringArmComponent;
 class AWeightCharacter;
 class UInputAction;
 struct FInputActionValue;
@@ -24,13 +25,7 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-
-	/** Called for movement input */
-	void Move(const FInputActionValue& Value);
-
-	/** Called for looking input */
-	void Look(const FInputActionValue& Value);
-
+	
 	// ** Called for interact input */
 	void Interact(const FInputActionValue& Value);
 	
@@ -50,19 +45,8 @@ public:
 	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	UCameraComponent* CameraComponent;
-
-	/** Look Input Action */
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Input")
-	UInputAction* LookAction;
-
-	/** Move Input Action */
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Input")
-	UInputAction* MoveAction;
-
+	
 	/** Interact Input Action */
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Input")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Input")
 	UInputAction* InteractAction;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	AWeightCharacter* PawnCurrentlyPeeking;
 };
