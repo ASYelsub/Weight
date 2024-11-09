@@ -14,6 +14,7 @@ AWeightPlayerController::AWeightPlayerController()
 	// Initialise variables.
 	InputMappingContext = nullptr;
 	ClosestPossessablePeephole = nullptr;
+	OriginalPossessedPawn = nullptr;
 	BlendPossessTime = 1.0;
 	StoredOriginalControllerRotation = FRotator(0.0);
 }
@@ -70,7 +71,6 @@ bool AWeightPlayerController::PossessRequest(APawn* Sender)
 		return true;
 	}
 	
-	
 	return false;
 }
 
@@ -79,12 +79,15 @@ void AWeightPlayerController::OnViewTargetTransitionFinished(APawn* PossessPawn)
 	GetWorldTimerManager().ClearTimer(ViewTargetTransitionHandler);
 	Possess(PossessPawn);
 
-	// If we are returning to our original character, restore the rotation, input.
+	// If we are returning to our original character, restore the rotation, input, and capture mouse to game window.
 	if (!OriginalPossessedPawn)
 	{
 		SetControlRotation(StoredOriginalControllerRotation);
+		
 		SetIgnoreMoveInput(false);
 		SetIgnoreLookInput(false);
+		
+		SetInputMode(FInputModeGameOnly());
 	}
 	// If we are possessing a peephole, show mouse cursor.
 	else

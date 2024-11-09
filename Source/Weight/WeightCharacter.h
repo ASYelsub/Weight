@@ -21,7 +21,11 @@ UCLASS(config=Game)
 class AWeightCharacter : public ACharacter
 {
 	GENERATED_BODY()
+
 	
+public:
+	AWeightCharacter();
+
 	/** Pawn mesh: 1st person view (arms; seen only by self) */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Mesh, meta = (AllowPrivateAccess = "true"))
 	USkeletalMeshComponent* Mesh1P;
@@ -41,20 +45,14 @@ class AWeightCharacter : public ACharacter
 	/** Interact Input Action */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
 	UInputAction* InteractAction;
-	
-public:
-	AWeightCharacter();
 
-protected:
-	virtual void BeginPlay() override;
-
-public:
-		
 	/** Look Input Action */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* LookAction;
 
 protected:
+	virtual void BeginPlay() override;
+	
 	/** Called for movement input */
 	void Move(const FInputActionValue& Value);
 
@@ -63,8 +61,7 @@ protected:
 
 	// ** Called for interact input */
 	void Interact(const FInputActionValue& Value);
-
-protected:
+	
 	// APawn interface
 	virtual void SetupPlayerInputComponent(UInputComponent* InputComponent) override;
 	// End of APawn interface
